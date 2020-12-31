@@ -154,9 +154,17 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
@@ -193,7 +201,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/27/Nuxt-import-components-in-a-page/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/HTML-Tag-case-insensitive/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -206,7 +214,88 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/12/27/Nuxt-import-components-in-a-page/" class="post-title-link" itemprop="url">Nuxt - import components in a page</a>
+          <a href="/HTML-Tag-case-insensitive/" class="post-title-link" itemprop="url">HTML Tag case-insensitive</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-12-31 15:15:04" itemprop="dateCreated datePublished" datetime="2020-12-31T15:15:04+08:00">2020-12-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="HTML-tag-竟然只有小寫！"><a href="#HTML-tag-竟然只有小寫！" class="headerlink" title="HTML tag 竟然只有小寫！"></a>HTML tag 竟然只有小寫！</h1><p>分享了上一篇文章 <a href="/Nuxt-import-components-in-a-page/" title="Nuxt x Component x Import 的小事">Nuxt x Component x Import 的小事</a> 之後，隔天我才知道，這是誤會中的誤會，朋友跟我說這不是這個原因。</p>
+<p>真正的原因，是 <strong>大小寫</strong>！</p>
+<h2 id="HTML-tag"><a href="#HTML-tag" class="headerlink" title="HTML tag"></a>HTML tag</h2><p>前情提要，上一篇文章中，我在 page 中要 import component，嘗試的結論是在 layout 中可以，但 page 中不行，這其實是個錯誤的結論。</p>
+<p>實際上是因為 HTML tag 本身是不分大小寫的 (case-insensitive)，即使有大小寫也只會抓小寫的檔案，</p>
+<p>tag names are case-insensitive.[1]</p>
+<p>而我的 Component 命名為 <code>shareButton.vue</code>，HTML 中試圖使用時，即使我們寫了 <code>&lt;shareButton /&gt;</code>，他依舊認為這是不同的東西，</p>
+<p>如果把檔名及 HTML tag 都改成小寫之後，就不需要顯式的去 Import 這個 component 了，可喜可賀。</p>
+<hr>
+<p>[1]: <a target="_blank" rel="noopener" href="https://html.spec.whatwg.org/multipage/syntax.html#elements-2">HTML Standard</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Nuxt-import-components-in-a-page/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Coder Louis">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/Nuxt-import-components-in-a-page/" class="post-title-link" itemprop="url">Nuxt - import components in a page</a>
         </h2>
 
         <div class="post-meta-container">
@@ -218,6 +307,15 @@
       <span class="post-meta-item-text">Posted on</span>
 
       <time title="Created: 2020-12-27 22:48:36" itemprop="dateCreated datePublished" datetime="2020-12-27T22:48:36+08:00">2020-12-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+        </span>
     </span>
 
   
@@ -232,14 +330,15 @@
     <div class="post-body" itemprop="articleBody">
           <h1 id="Nuxt-x-Component-x-Import-的小事"><a href="#Nuxt-x-Component-x-Import-的小事" class="headerlink" title="Nuxt x Component x Import 的小事"></a>Nuxt x Component x Import 的小事</h1><h2 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h2><p>寫好 Component 之後，被我誤會的自動 import </p>
 <ul>
-<li>layouts/ 能直接使用</li>
-<li>pages/ 則必須要顯式 import 才能用</li>
+<li><a href="/HTML-Tag-case-insensitive/" title="大小寫才是真正的原因">大小寫才是真正的原因</a></li>
+<li><del>layouts/ 能直接使用</del></li>
+<li><del>pages/ 則必須要顯式 import 才能用</del></li>
 </ul>
 <h2 id="NuxtJs"><a href="#NuxtJs" class="headerlink" title="NuxtJs"></a>NuxtJs</h2><p><a target="_blank" rel="noopener" href="https://nuxtjs.org/"><code>NuxtJs</code></a> 是一款基於 <code>VueJs</code> 的前端框架，延伸實作了 SSR (Server-Side Render) 跟一些幫助開發跟理解的語法。<br><img src="https://nuxtjs.org/logos/nuxtjs-typo-white.svg" alt="NuxtJs"></p>
 <h2 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h2><p>當我們發現好幾頁都有相同的部分時，就可以把它們提取出來寫成 <code>元件</code> (Component)，減少重複的程式碼。</p>
 <p>根據 Nuxt <a target="_blank" rel="noopener" href="https://nuxtjs.org/docs/2.x/directory-structure/components">文件</a>的描述，<br>將 vue 程式碼放在 <code>components</code> 資料夾中，就能直接被其他檔案所引用。</p>
 <p>以下是範例的目錄</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">components</span><br><span class="line">├── navbar.vue</span><br><span class="line">└── shareButton.vue</span><br><span class="line">layouts</span><br><span class="line">└── default.vue</span><br><span class="line">pages</span><br><span class="line">├── blog</span><br><span class="line">│   ├── _id.vue</span><br><span class="line">│   └── index.vue</span><br><span class="line">├── news</span><br><span class="line">    ├── _id.vue</span><br><span class="line">    └── index.vue</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">components</span><br><span class="line">├── navbar.vue</span><br><span class="line">└── shareButton.vue</span><br><span class="line">layouts</span><br><span class="line">└── default.vue</span><br><span class="line">pages</span><br><span class="line">├── blog</span><br><span class="line">│   ├── _id.vue</span><br><span class="line">│   └── index.vue</span><br><span class="line">└── news</span><br><span class="line">    ├── _id.vue</span><br><span class="line">    └── index.vue</span><br></pre></td></tr></table></figure>
 
 <p>我將 blog 跟 news 中重複的程式碼抽出來寫成一個叫 <code>shareButton</code> 的 component，就像原本就已經寫好的網站導覽列 <code>navbar</code>。</p>
 <h2 id="引用-component"><a href="#引用-component" class="headerlink" title="引用 component"></a>引用 component</h2><p>在 Layout 中(<code>layouts/</code>)就可以直接使用寫好的 component:</p>
@@ -279,7 +378,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/07/Git-clone-permission-denied/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Git-clone-permission-denied/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -292,7 +391,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/12/07/Git-clone-permission-denied/" class="post-title-link" itemprop="url">Sudo Git Clone - Permission Denied</a>
+          <a href="/Git-clone-permission-denied/" class="post-title-link" itemprop="url">Sudo Git Clone - Permission Denied</a>
         </h2>
 
         <div class="post-meta-container">

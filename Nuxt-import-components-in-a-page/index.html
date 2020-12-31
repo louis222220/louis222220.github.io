@@ -23,21 +23,23 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Gemini","version":"8.1.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="Nuxt x Component x Import 的小事TL;DR寫好 Component 之後，被我誤會的自動 import   layouts&#x2F; 能直接使用 pages&#x2F; 則必須要顯式 import 才能用  NuxtJsNuxtJs 是一款基於 VueJs 的前端框架，延伸實作了 SSR (Server-Side Render) 跟一些幫助開發跟理解的語法。 Component當我們發現好">
+<meta name="description" content="Nuxt x Component x Import 的小事TL;DR寫好 Component 之後，被我誤會的自動 import   大小寫才是真正的原因 layouts&#x2F; 能直接使用 pages&#x2F; 則必須要顯式 import 才能用  NuxtJsNuxtJs 是一款基於 VueJs 的前端框架，延伸實作了 SSR (Server-Side Render) 跟一些幫助開發跟理解的語法。 Comp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nuxt - import components in a page">
-<meta property="og:url" content="http://yoursite.com/2020/12/27/Nuxt-import-components-in-a-page/index.html">
+<meta property="og:url" content="http://yoursite.com/Nuxt-import-components-in-a-page/index.html">
 <meta property="og:site_name" content="Coder Louis">
-<meta property="og:description" content="Nuxt x Component x Import 的小事TL;DR寫好 Component 之後，被我誤會的自動 import   layouts&#x2F; 能直接使用 pages&#x2F; 則必須要顯式 import 才能用  NuxtJsNuxtJs 是一款基於 VueJs 的前端框架，延伸實作了 SSR (Server-Side Render) 跟一些幫助開發跟理解的語法。 Component當我們發現好">
+<meta property="og:description" content="Nuxt x Component x Import 的小事TL;DR寫好 Component 之後，被我誤會的自動 import   大小寫才是真正的原因 layouts&#x2F; 能直接使用 pages&#x2F; 則必須要顯式 import 才能用  NuxtJsNuxtJs 是一款基於 VueJs 的前端框架，延伸實作了 SSR (Server-Side Render) 跟一些幫助開發跟理解的語法。 Comp">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://nuxtjs.org/logos/nuxtjs-typo-white.svg">
 <meta property="article:published_time" content="2020-12-27T14:48:36.000Z">
 <meta property="article:modified_time" content="2020-12-27T14:48:36.000Z">
+<meta property="article:tag" content="Nuxt">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://nuxtjs.org/logos/nuxtjs-typo-white.svg">
 
 
-<link rel="canonical" href="http://yoursite.com/2020/12/27/Nuxt-import-components-in-a-page/">
+<link rel="canonical" href="http://yoursite.com/Nuxt-import-components-in-a-page/">
 
 
 <script class="page-configurations">
@@ -161,9 +163,17 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
       </div>
   </nav>
 </div>
@@ -201,7 +211,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/27/Nuxt-import-components-in-a-page/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/Nuxt-import-components-in-a-page/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -227,6 +237,15 @@
 
       <time title="Created: 2020-12-27 22:48:36" itemprop="dateCreated datePublished" datetime="2020-12-27T22:48:36+08:00">2020-12-27</time>
     </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+        </span>
+    </span>
 
   
 </div>
@@ -240,14 +259,15 @@
     <div class="post-body" itemprop="articleBody">
         <h1 id="Nuxt-x-Component-x-Import-的小事"><a href="#Nuxt-x-Component-x-Import-的小事" class="headerlink" title="Nuxt x Component x Import 的小事"></a>Nuxt x Component x Import 的小事</h1><h2 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h2><p>寫好 Component 之後，被我誤會的自動 import </p>
 <ul>
-<li>layouts/ 能直接使用</li>
-<li>pages/ 則必須要顯式 import 才能用</li>
+<li><a href="/HTML-Tag-case-insensitive/" title="大小寫才是真正的原因">大小寫才是真正的原因</a></li>
+<li><del>layouts/ 能直接使用</del></li>
+<li><del>pages/ 則必須要顯式 import 才能用</del></li>
 </ul>
 <h2 id="NuxtJs"><a href="#NuxtJs" class="headerlink" title="NuxtJs"></a>NuxtJs</h2><p><a target="_blank" rel="noopener" href="https://nuxtjs.org/"><code>NuxtJs</code></a> 是一款基於 <code>VueJs</code> 的前端框架，延伸實作了 SSR (Server-Side Render) 跟一些幫助開發跟理解的語法。<br><img src="https://nuxtjs.org/logos/nuxtjs-typo-white.svg" alt="NuxtJs"></p>
 <h2 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h2><p>當我們發現好幾頁都有相同的部分時，就可以把它們提取出來寫成 <code>元件</code> (Component)，減少重複的程式碼。</p>
 <p>根據 Nuxt <a target="_blank" rel="noopener" href="https://nuxtjs.org/docs/2.x/directory-structure/components">文件</a>的描述，<br>將 vue 程式碼放在 <code>components</code> 資料夾中，就能直接被其他檔案所引用。</p>
 <p>以下是範例的目錄</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">components</span><br><span class="line">├── navbar.vue</span><br><span class="line">└── shareButton.vue</span><br><span class="line">layouts</span><br><span class="line">└── default.vue</span><br><span class="line">pages</span><br><span class="line">├── blog</span><br><span class="line">│   ├── _id.vue</span><br><span class="line">│   └── index.vue</span><br><span class="line">├── news</span><br><span class="line">    ├── _id.vue</span><br><span class="line">    └── index.vue</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">components</span><br><span class="line">├── navbar.vue</span><br><span class="line">└── shareButton.vue</span><br><span class="line">layouts</span><br><span class="line">└── default.vue</span><br><span class="line">pages</span><br><span class="line">├── blog</span><br><span class="line">│   ├── _id.vue</span><br><span class="line">│   └── index.vue</span><br><span class="line">└── news</span><br><span class="line">    ├── _id.vue</span><br><span class="line">    └── index.vue</span><br></pre></td></tr></table></figure>
 
 <p>我將 blog 跟 news 中重複的程式碼抽出來寫成一個叫 <code>shareButton</code> 的 component，就像原本就已經寫好的網站導覽列 <code>navbar</code>。</p>
 <h2 id="引用-component"><a href="#引用-component" class="headerlink" title="引用 component"></a>引用 component</h2><p>在 Layout 中(<code>layouts/</code>)就可以直接使用寫好的 component:</p>
@@ -269,16 +289,23 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Nuxt/" rel="tag"># Nuxt</a>
+              <a href="/tags/Vue/" rel="tag"># Vue</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/12/07/Git-clone-permission-denied/" rel="prev" title="Sudo Git Clone - Permission Denied">
+                <a href="/Git-clone-permission-denied/" rel="prev" title="Sudo Git Clone - Permission Denied">
                   <i class="fa fa-chevron-left"></i> Sudo Git Clone - Permission Denied
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/HTML-Tag-case-insensitive/" rel="next" title="HTML Tag case-insensitive">
+                  HTML Tag case-insensitive <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
